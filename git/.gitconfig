@@ -1,0 +1,11 @@
+[user]
+	name = Julppu
+	email = juha.lindqvist@cs.helsinki.fi
+[color]
+	ui = true
+	branch = true
+	diff = true
+	interactive = true
+	status = true
+[core]
+	editor = vim
