@@ -1,0 +1,29 @@
+
+---
+
+hosts: localhost
+  vars:
+  - username: <secret>
+  - home_dir: {{ ansible_env.HOME }}
+  remote_user: {{ username }}
+
+  - name: update apt-cache
+    apt: update_cache=true
+
+  - name: make sure everything necessary is installed
+    apt: {{item}} state=latest update_cache=no
+    sudo: yes
+    with_items:
+    - curl
+    - git
+    - irssi
+    - wget
+    - zsh
+
+  - name: install thefuck
+    command: wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
+    sudo: no
+
+  - name: install oh-my-zsh
+    command: sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    sudo: no
