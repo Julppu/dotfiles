@@ -1,10 +1,17 @@
 [user]
-	name = )#")HJDS
+    name = )#")HJDS
+
 [color]
-	ui = true
-	branch = true
-	diff = true
-	interactive = true
-	status = true
+    ui = true
+    branch = true
+    diff = true
+    interactive = true
+    status = true
+
 [core]
-	editor = vim
+    editor = vim
+
+[alias]
+    unstage = reset -q HEAD --
+    discard = checkout --
+    uncommit = reset --mixed HEAD~
