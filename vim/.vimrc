@@ -1,6 +1,10 @@
+" Pathogen
+execute pathogen#infect()
+call pathogen#helptags()
 
 " Editor
 set number
+set relativenumber
 set wrap
 set showbreak=+++
 set linebreak
@@ -31,8 +35,7 @@ set undolevels=1000
 set backspace=indent,eol,start
 
 " File stuff
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 syntax enable
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -45,8 +48,7 @@ if has('mouse')
   set mouse=a
 endif
 
-" Pathogen
-execute pathogen#infect()
+" 
 
 " Nerdtree
 autocmd StdinReadPre * let s:std_in=1
