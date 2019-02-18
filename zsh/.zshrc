@@ -68,7 +68,6 @@ plugins=(
   mosh
   tmuxi
   svn
-  svn-fast-info
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -104,6 +103,13 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# tmux workaround for zsh autosuggestions
+export TERM=xterm-256color
+
+# ZSH iTerm2 integration
+source ~/.zsh/.iterm2_shell_integration.zsh
+eval "$(nodenv init -)"
+
 # autocomplete commands for root when sudoing
 zstyle ':completion:*:sudo::' environ PATH="/sbin:/usr/sbin:$PATH" HOME="/root"
 
@@ -118,15 +124,65 @@ ZSH_HIGHLIGHT_STYLES[builtin]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow,bold'
-
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fd=pink'
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fd=pink'
 
-# Homebrew binaries path
+# Homebrew binaries to path - set precedence to homebrew
+# reverse order: last set is first searched when executing
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/opt/libpcap/bin:$PATH"
+export PATH="/usr/local/opt/guile@2.0/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/ed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/curl/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/openssl:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
-# tmux workaround for zsh autosuggestions
-export TERM=xterm-256color
+# compiler flag paths
+export LDFLAGS="$LDFLAGS:-L/usr/local/opt/openssl/lib"
+export LDFLAGS="$LDFLAGS:-L/usr/local/opt/ruby/lib"
+export LDFLAGS="$LDFLAGS:-L/usr/local/opt/curl/lib"
+export LDFLAGS="$LDFLAGS:-L/usr/local/opt/sqlite/lib"
+export LDFLAGS="$LDFLAGS:-L/usr/local/opt/guile@2.0/lib"
+export LDFLAGS="$LDFLAGS:-L/usr/local/opt/readline/lib"
+export LDFLAGS="$LDFLAGS:-L/usr/local/opt/libpcap/lib"
+export LDFLAGS="$LDFLAGS:-L/usr/local/opt/icu4c/include"
+export LDFLAGS="$LDFLAGS:-L/usr/local/opt/binutils/include"
 
-# ZSH iTerm2 integrationn
-source ~/.zsh/.iterm2_shell_integration.zsh
+export CPPFLAGS="$CPPFLAGS:-I/usr/local/opt/openssl/include"
+export CPPFLAGS="$CPPFLAGS:-I/usr/local/opt/ruby/include"
+export CPPFLAGS="$CPPFLAGS:-I/usr/local/opt/curl/include"
+export CPPFLAGS="$CPPFLAGS:-I/usr/local/opt/sqlite/include"
+export CPPFLAGS="$CPPFLAGS:-I/usr/local/opt/guile@2.0/include"
+export CPPFLAGS="$CPPFLAGS:-I/usr/local/opt/readline/include"
+export CPPFLAGS="$CPPFLAGS:-I/usr/local/opt/libpcap/include"
+export CPPFLAGS="$CPPFLAGS:-I/usr/local/opt/icu4c/include"
+export CPPFLAGS="$CPPFLAGS:-I/usr/local/opt/binutils/include"
+
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/openssl/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/ruby/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/curl/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/sqlite/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/guile@2.0/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/readline/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/libpcap/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/icu4c/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/binutils/lib/pkgconfig"
+
+export RUBYLIB="$RUBYLIB:/usr/local/lib/ruby"
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
+# update PATH for the Google Cloud SDK.
+if [ -f '/Users/jlindqvist/Downloads/google-cloud-sdk/path.zsh.inc' ];
+    then . '/Users/jlindqvist/Downloads/google-cloud-sdk/path.zsh.inc';
+fi
+
+# enable shell completion for gcloud.
+if [ -f '/Users/jlindqvist/Downloads/google-cloud-sdk/completion.zsh.inc' ];
+    then . '/Users/jlindqvist/Downloads/google-cloud-sdk/completion.zsh.inc';
+fi

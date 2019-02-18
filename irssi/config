@@ -3,15 +3,7 @@ servers = (
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { address = "irc.undernet.org"; chatnet = "Undernet"; port = "6667"; },
-  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
   { address = "irc.quakenet.org"; chatnet = "QuakeNet"; port = "6667"; },
-  { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
-  { address = "irc.gamesurge.net"; chatnet = "GameSurge"; port = "6667"; },
-  { address = "irc.webchat.org"; chatnet = "WebChat"; port = "6667"; },
-  { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
-  { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
   
  # personal configs
   {
@@ -37,27 +29,49 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "yes";
-  }
+  },
+  {
+    address = "rajaniemi.freenode.net";
+    chatnet = "Freenode";
+    port = "6667";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "yes"; 
 );
 
 chatnets = {
-  IRCnet = { type = "IRC"; autosendcmd = "irc.cs.hut.fi"; max_query_chans = "5"; max_kicks = "4"; max_msgs = "5"; max_whois = "4"; };
-  EFNet = { type = "IRC"; max_kicks = "4"; max_msgs = "3"; max_whois = "1"; };
-  Undernet = { type = "IRC"; max_kicks = "1"; max_msgs = "3"; max_whois = "30"; };
-  DALnet = { type = "IRC"; max_kicks = "4"; max_msgs = "3"; max_whois = "30"; };
-  QuakeNet = { type = "IRC"; autosendcmd = "/^msg Q@CServe.quakenet.org AUTH Julppu Zybkib00"; max_kicks = "1"; max_msgs = "3"; max_whois = "30"; };
-  OFTC = { type = "IRC"; max_kicks = "1"; max_msgs = "3"; max_whois = "30"; };
-  GameSurge = { type = "IRC"; max_kicks = "1"; max_msgs = "3"; max_whois = "30"; };
-  WebChat = { type = "IRC"; max_kicks = "1"; max_msgs = "3"; max_whois = "30"; };
-  Rizon = { type = "IRC"; max_kicks = "1"; max_msgs = "3"; max_whois = "30"; };
-  LinkNet = { type = "IRC"; max_kicks = "1"; max_msgs = "3"; max_whois = "30"; };
-  SILC = { type = "SILC"; };
-  Ubuntu = { type = "IRC"; };
+  IRCnet = { 
+    type = "IRC";
+    autosendcmd = "irc.cs.hut.fi";
+    max_query_chans = "5";
+    max_kicks = "4";
+    max_msgs = "5";
+    max_whois = "4";
+  };
+  EFNet = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "3";
+    max_whois = "1";
+  };
+  QuakeNet = {
+    type = "IRC";
+    autosendcmd = "/^msg Q@CServe.quakenet.org AUTH xxxx yyyy";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+  Freenode = {
+    type = "IRC";
+    nick = "xxx";
+    realname = "null"
+  };
 };
 
 channels = (
   # None of your business
 )
+
 aliases = {
   J = "join";
   WJOIN = "join -window";
@@ -93,7 +107,8 @@ aliases = {
   UMODE = "mode $N";
   WC = "window close";
   WN = "window new hide";
-  SV = "say Irssi $J ($V) - http://irssi.org/";
+  WML = "window move left";
+  WMR = "window move right";
   GOTO = "sb goto";
   CHAT = "dcc chat";
   RUN = "SCRIPT LOAD";
@@ -237,13 +252,11 @@ settings = {
   "perl/core/scripts" = {
     irssinotifier_encryption_password = "";
     irssinotifier_api_token = "";
-    irssinotifier_screen_detached_only = "yes";
+    irssinotifier_screen_detached_only = "no";
     irssinotifier_clear_notifications_when_viewed = "yes";
   };
 };
 hilights = (
-  { text = "koodi 3"; nick = "no"; word = "yes"; },
-  { text = "bmur"; nick = "no"; word = "yes"; },
 );
 logs = { };
 windows = {
