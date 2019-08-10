@@ -1,18 +1,30 @@
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
 # Homebrew binaries to path - set precedence to homebrew installed
 # reverse order: last set is first searched when executing
+export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/libpcap/bin:$PATH"
 export PATH="/usr/local/opt/guile@2.0/bin:$PATH"
+export PATH="/usr/local/opt/file-formula/bin:$PATH"
+export PATH="/usr/local/opt/ant@1.9/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+export PATH="/usr/local/opt/gnu-indent/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/ed/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/unzip/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/curl/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/openssl:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # compiler flag paths
 export LDFLAGS="$LDFLAGS:-L/usr/local/opt/openssl/lib"
