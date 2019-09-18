@@ -1,0 +1,17 @@
+---
+# Start workstation setup
+- hosts: all
+  connection: local
+  
+  vars_files:
+    - defaults/homebrew.yml
+
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - vars/*.yml"
+      tags: ['always']
+  
+  tasks:
+    - name: Install homebrew packages
+      include_tasks: tasks/homebrew.yml

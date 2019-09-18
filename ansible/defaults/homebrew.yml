@@ -1,0 +1,37 @@
+---
+
+homebrew_packages:
+  - ant
+  - bash
+  - coreutils
+  - curl
+  - curl-openssl
+  - dos2unix
+  - gcc
+  - git
+  - gradle
+  - macvim
+  - maven
+  - mosh
+  - openssh
+  - openssl
+  - p7zip
+  - ruby
+  - subversion
+  - thefuck
+  - tmux
+  - tree
+  - unrar
+  - unzip
+  - wget
+  - zip
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+
+homebrew_cask_packages:
+  - powershell
+
+homebrew_taps:
+  - { tap: "microsoft/mssql-release",
+      url: "https://github.com/Microsoft/homebrew-mssql-release" }
