@@ -6,19 +6,29 @@ homebrew_packages:
   - coreutils
   - curl
   - curl-openssl
+  - diffutils
   - dos2unix
   - gcc
   - git
+  - go
   - gradle
+  - htop
+  - ivy
+  - jenv
   - macvim
   - maven
   - mosh
+  - node
+  - nodenv
   - openssh
   - openssl
   - p7zip
+  - rsync
   - ruby
+  - screen
+  - screenfetch
   - subversion
-  - thefuck
+  - terraform
   - tmux
   - tree
   - unrar
@@ -26,11 +36,34 @@ homebrew_packages:
   - wget
   - zip
   - zsh
+  - zsh-completions
   - zsh-autosuggestions
   - zsh-syntax-highlighting
 
 homebrew_cask_packages:
+  - google-chrome
+  - google-cloud-sdk
+  - jetbrains-toolbox
+  - mactex
+  - minikube
+  - oracle-jdk
+  - postman
   - powershell
+  - spotify
+  - the-unarchiver
+  - visual-studio-code
+  - virtualbox
+  - virtualbox-extension-pack
+  - vlc
+  - xquartz
+
+homebrew_font_taps:
+  - homebrew/cask-fonts
+
+homebrew_fonts:
+  - font-hack-nerd-font
+  - font-menlo-for-powerline
+  - font-meslo-for-powerline
 
 homebrew_taps:
   - { tap: "microsoft/mssql-release",

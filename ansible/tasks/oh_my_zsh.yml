@@ -1,0 +1,32 @@
+---
+
+- name: Get oh-my-zsh installer
+  get_url:
+    url: "https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+    dest: "/tmp/omz-installer.sh"
+
+- name: Run the installer
+  shell: "/tmp/omz-installer.sh"
+
+- name: Remove the installer
+  file:
+    path: "/tmp/omz-installer.sh"
+    state: absent
+
+- name: Copy zshrc
+  copy:
+    src: "/tmp/dotfiles/zsh/.zshrc"
+    dest: "~/.zshrc"
+
+- name: Copy oh-my-zsh theme
+  copy:
+    src: "/tmp/dotfiles/oh-my-zsh/custom/themes/robbyrussell-extended.zsh-theme"
+    dest: "~/.oh-my-zsh/custom/themes/robbyrussell-extended.zsh-theme"
+
+- name: Copy oh-my-zsh configuration files
+  copy:
+    src: "/tmp/dotfiles/zsh/.zsh/{{ item }}"
+    dest: "~/.zsh/{{ item }}"
+  loop:
+    - homebrew_paths.zsh
+    - plugin_configurations.zsh

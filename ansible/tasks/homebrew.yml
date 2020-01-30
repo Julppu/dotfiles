@@ -10,6 +10,13 @@
     state: present
   loop: "{{ homebrew_taps }}"
 
+- name: Add homebrew font taps
+  homebrew_tap:
+    name: "{{ item.tap }}"
+    update_homebrew: no
+    state: present
+  loop: "{{ homebrew_font_taps }}"
+
 - name: Update and upgrade homebrew
   homebrew:
     update_homebrew: yes

@@ -2,7 +2,7 @@
 # Start workstation setup
 - hosts: all
   connection: local
-  
+
   vars_files:
     - defaults/homebrew.yml
 
@@ -11,7 +11,22 @@
       with_fileglob:
         - vars/*.yml"
       tags: ['always']
-  
+
+  # run tasks
   tasks:
-    - name: Install homebrew packages
+    - name: Install homebrew and packages
       include_tasks: tasks/homebrew.yml
+
+    - name: Handle general tasks
+      include_tasks: tasks/general.yml
+
+    - name: Install oh-my-zsh
+      include_tasks: tasks/oh_my_zsh.yml
+
+    - name: Install vim
+      include_tasks: tasks/vim.yml
+
+    - name: Cleanup
+      file:
+        path: /tmp/dotfiles
+        state: absent
