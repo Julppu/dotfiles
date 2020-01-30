@@ -1,5 +1,6 @@
 [user]
-    name = )#")HJDS
+    name =
+    email =
 
 [color]
     ui = true

@@ -7,7 +7,7 @@ prompt_svn() {
         if [ `svn_dirty_choose_pwd 1 0` -eq 1 ]; then
             prompt_segment yellow black
             echo -n "$rev@$branch"
-            echo -n "Â±"
+            echo -n "±"
         else
             prompt_segment white black
             echo -n "$rev@$branch"

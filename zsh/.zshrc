@@ -86,14 +86,7 @@ export LANG=fi_FI.UTF-8
 export LC_ALL=fi_FI.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
 export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -115,6 +108,9 @@ export TERM=xterm-256color
 source ~/.zsh/.iterm2_shell_integration.zsh
 eval "$(nodenv init -)"
 
+# kubectl shell completion
+source <(kubectl completion zsh)
+
 # thefuck
 eval $(thefuck --alias)
 alias vittu=thefuck
@@ -122,8 +118,9 @@ alias vittu=thefuck
 # autocomplete commands for root when sudoing
 zstyle ':completion:*:sudo::' environ PATH="/sbin:/usr/sbin:$PATH" HOME="/root"
 
-# zsh-syntax-highlighting configuration
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# zsh-syntax-highlighting configuration
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[commandseparators]='fg=yellow,bold'
@@ -140,3 +137,13 @@ source ~/.zsh/homebrew_paths.zsh
 
 # Various plugin configurations
 source ~/.zsh/plugin_configurations.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jlindqvist/Applications/google-cloud-sdk/path.zsh.inc' ]; then
+    . '/Users/jlindqvist/Applications/google-cloud-sdk/path.zsh.inc';
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jlindqvist/Applications/google-cloud-sdk/completion.zsh.inc' ]; then 
+    . '/Users/jlindqvist/Applications/google-cloud-sdk/completion.zsh.inc';
+fi

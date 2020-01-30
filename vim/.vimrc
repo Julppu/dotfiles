@@ -61,3 +61,6 @@ let g:syntastic_check_on_wq = 0
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
+
+" indentLine
+let g:indentLine_char = '┊'
