@@ -1,6 +1,0 @@
----
-# Tasks for installing useful pip packages
-  - name: Install Ansible dependencies for packages
-    pip:
-      name:
-        - virtuelenv

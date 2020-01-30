@@ -1,7 +1,0 @@
----
-
-- name: Get dotfiles repo
-  git:
-    repo: git@github.com:Julppu/dotfiles.git
-    dest: /tmp/dotfiles
-    clone: yes
