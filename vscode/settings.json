@@ -1,28 +1,15 @@
 {
-    "editor.copyWithSyntaxHighlighting": false,
-    "editor.formatOnPaste": true,
-    "editor.tabCompletion": "onlySnippets",
-    "editor.emptySelectionClipboard": false,
-    "editor.mouseWheelZoom": true,
     "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.emptySelectionClipboard": false,
     "editor.fontFamily": "'Meslo LG M DZ for Powerline', Menlo, Monaco, 'Courier New', monospace",
+    "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "window.restoreWindows": "all",
-    "window.zoomLevel": -2,
+    "editor.mouseWheelZoom": true,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
     "explorer.sortOrder": "type",
-    "search.showLineNumbers": true,
-    "terminal.external.osxExec": "iTerm2.app",
-    "terminal.integrated.fontSize": 10,
-    "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.macOptionIsMeta": true,
-    "update.showReleaseNotes": false,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
     "files.associations": {
-        "**/*.j2": "jinja",
-        "**/Vagrantfile": "ruby",
         "**/*.xconf": "xml",
         "**/*.xmap": "xml",
         "**/*.xsp": "java",
@@ -37,7 +24,6 @@
         "**/.hg": true,
         "**/.svn": true,
         "**/CVS": true,
-        "**/.idea/": true,
         "*.iml": true,
         "*~": true,
         "*.swp": true,
@@ -45,14 +31,72 @@
         "**/node_modules/": true,
         "**/package/lib/": true
     },
-    "svn.enableProposedApi": "product",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "remote.WSL.fileWatcher.polling": true,
+    "search.showLineNumbers": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.external.linuxExec": "xterm",
+    "terminal.external.osxExec": "iTerm2.app",
+    "terminal.external.windowsExec": "C:\\Windows\\System32\\powershell.exe",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.macOptionIsMeta": true,
+    "update.showReleaseNotes": false,
+    "window.restoreWindows": "all",
+    "window.zoomLevel": -2,
+    "zenMode.hideLineNumbers": false,
+    // plugins
+    "git.enabled": true,
+    "git.path": "C:\\Program Files\\Git\\bin\\git.exe",
     "gitlens.codeLens.enabled": false,
     "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
     "gitlens.defaultDateFormat": "YYYY-MM-DD HH:MM:ss",
+    "go.buildOnSave": "package",
+    "go.docsTool": "godoc",
     "go.formatTool": "goimports",
-    "markdown.extension.italic.indicator": "_",
+    "go.lintOnSave": "file",
+    "go.lintTool": "staticcheck",
+    "go.testOnSave": false,
+    "go.toolsGopath": "C:\\Users\\juha.lindqvist\\go",
+    "go.useLanguageServer": true,
+    "go.vetOnSave": "package",
+    "hadolint.hadolintPath": "%USERHOME%\\scoop\\shims\\hadolint.exe",
+    "shellformat.path": "%USERHOME%\\scoop\\shims\\shellcheck.exe",
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": [
+            "serve"
+        ]
+    },
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    // language preferences
+    "[ansible]": {
+        "editor.rulers": [
+            160
+        ]
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "exiasr.hadolint"
+    },
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        "editor.snippetSuggestions": "none",
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
     "[markdown]": {
         "files.trimTrailingWhitespace": false
     },
-    "zenMode.hideLineNumbers": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
