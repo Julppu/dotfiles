@@ -1,0 +1,179 @@
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+    "requestedTheme": "dark",
+    "copyOnSelect": false,
+    "keybindings": [
+        {
+            "command": "copy",
+            "keys": [
+                "ctrl+c"
+            ]
+        },
+        {
+            "command": "paste",
+            "keys": [
+                "ctrl+v"
+            ]
+        },
+        {
+            "command": {
+                "action": "moveFocus",
+                "direction": "up"
+            },
+            "keys": [
+                "ctrl+shift+up"
+            ]
+        },
+        {
+            "command": {
+                "action": "moveFocus",
+                "direction": "down"
+            },
+            "keys": [
+                "ctrl+shift+down"
+            ]
+        },
+        {
+            "command": {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "keys": [
+                "ctrl+shift+left"
+            ]
+        },
+        {
+            "command": {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "keys": [
+                "ctrl+shift+right"
+            ]
+        },
+        {
+            "command": {
+                "action": "splitPane",
+                "split": "vertical"
+            },
+            "keys": [
+                "ctrl+alt+d"
+            ]
+        },
+        {
+            "command": {
+                "action": "splitPane",
+                "split": "horizontal"
+            },
+            "keys": [
+                "ctrl+alt+w"
+            ]
+        },
+        {
+            "command": {
+                "action": "splitPane",
+                "split": "horizontal"
+            },
+            "keys": [
+                "ctrl+alt+shift+d"
+            ]
+        },
+        {
+            "command": "closePane",
+            "keys": [
+                "ctrl+alt+shift+d"
+            ]
+        }
+    ],
+    "profiles": {
+        "defaults": {
+            "colorScheme": "Cobalt2",
+            "cursorShape": "filledBox",
+            "fontFace": "Meslo LG M DZ for Powerline",
+            "fontSize": 10,
+            "useAcrylic": false
+        },
+        "list": [
+            {
+                "name": "Ubuntu",
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\jlindqvist",
+                "icon": "ms-appdata:///Local/img/circle-of-friends-web/PNG/cof_white-black_hex.png",
+                "backgroundImage": "ms-appdata:///Local/img/circle-of-friends-web/PNG/cof_black_hex.png",
+                "backgroundImageOpacity": 0.15,
+                "backgroundImageStretchMode": "none",
+                "backgroundImageAlignment": "topRight",
+                "useAcrylic": false,
+                "hidden": false,
+            },
+            {
+                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+                "name": "Arch",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "\\\\wsl$\\Arch\\home\\jlindqvist",
+                "icon": "ms-appdata:///Local/img/archlinux-artwork/icons/archlinux-icon-crystal-32.svg",
+                "backgroundImage": "ms-appdata:///Local/img/archlinux-artwork/icons/archlinux-icon-crystal-128x.svg",
+                "backgroundImageOpacity": 0.15,
+                "backgroundImageStretchMode": "none",
+                "backgroundImageAlignment": "topRight",
+                "useAcrylic": false,
+                "hidden": false,
+            },
+            {
+                "name": "PowerShell",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "commandline": "powershell.exe",
+                "hidden": false
+            },
+            {
+                "name": "PowerShell Core",
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "source": "Windows.Terminal.PowershellCore",
+                "hidden": false
+            },
+            {
+                "name": "cmd",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "commandline": "cmd.exe",
+                "hidden": true
+            },
+            {
+                "name": "Azure Cloud Shell",
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": true,
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{63e31163-583f-5850-9c1e-24e227dd2da9}",
+                "hidden": true,
+                "name": "PowerShell Core",
+                "source": "Windows.Terminal.PowershellCore"
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "background": "#193549",
+            "black": "#000000",
+            "blue": "#1478DB",
+            "brightBlack": "#808080",
+            "brightBlue": "#1478DB",
+            "brightCyan": "#00ffff",
+            "brightGreen": "#33ff00",
+            "brightPurple": "#cc00ff",
+            "brightRed": "#ff0000",
+            "brightWhite": "#ffffff",
+            "brightYellow": "#ffff00",
+            "cyan": "#00c5c7",
+            "foreground": "#c7c7c7",
+            "green": "#3AD900",
+            "name": "Cobalt2",
+            "purple": "#ff2c70",
+            "red": "#ff2600",
+            "white": "#c7c7c7",
+            "yellow": "#ffc600"
+        }
+    ]
+}
