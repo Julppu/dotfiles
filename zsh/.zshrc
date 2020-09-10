@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jlindqvist/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -67,9 +67,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   colored-man-pages
+  docker
   git
-  mosh
-  osx
   svn
   urltools
   zsh-autosuggestions
@@ -105,8 +104,8 @@ alias ls="ls --color=auto"
 export TERM=xterm-256color
 
 # ZSH iTerm2 integration
-source ~/.zsh/.iterm2_shell_integration.zsh
-eval "$(nodenv init -)"
+#source ~/.zsh/.iterm2_shell_integration.zsh
+#eval "$(nodenv init -)"
 
 # kubectl shell completion
 source <(kubectl completion zsh)
@@ -115,12 +114,8 @@ source <(kubectl completion zsh)
 eval $(thefuck --alias)
 alias vittu=thefuck
 
-# autocomplete commands for root when sudoing
-zstyle ':completion:*:sudo::' environ PATH="/sbin:/usr/sbin:$PATH" HOME="/root"
-
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
 # zsh-syntax-highlighting configuration
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[commandseparators]='fg=yellow,bold'
@@ -133,17 +128,23 @@ ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fd=pink'
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fd=pink'
 
 # Homebrew PATH definitions
-source ~/.zsh/homebrew_paths.zsh
+# source ~/.zsh/homebrew_paths.zsh
 
 # Various plugin configurations
 source ~/.zsh/plugin_configurations.zsh
 
+# Environment variables
+source ~/.zsh/env_vars.zsh
+
+# autocomplete commands for root when sudoing
+zstyle ':completion:*:sudo::' environ PATH="/sbin:/usr/sbin:$PATH" HOME="/root"
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jlindqvist/Applications/google-cloud-sdk/path.zsh.inc' ]; then
-    . '/Users/jlindqvist/Applications/google-cloud-sdk/path.zsh.inc';
+if [ -f '$HOME/apps/google-cloud-sdk/path.zsh.inc' ]; then
+  . '$HOME/apps/google-cloud-sdk/path.zsh.inc'
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/jlindqvist/Applications/google-cloud-sdk/completion.zsh.inc' ]; then 
-    . '/Users/jlindqvist/Applications/google-cloud-sdk/completion.zsh.inc';
+if [ -f '$HOME/apps/google-cloud-sdk/completion.zsh.inc' ]; then
+  . '$HOME/apps/google-cloud-sdk/completion.zsh.inc'
 fi

@@ -63,13 +63,3 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/binutils/lib/pkgconfig"
 
 export RUBYLIB="$RUBYLIB:/usr/local/lib/ruby"
 export GROOVY_HOME="/usr/local/opt/groovy/libexec"
-
-# update PATH for the Google Cloud SDK.
-if [ -f '/Users/jlindqvist/Downloads/google-cloud-sdk/path.zsh.inc' ];
-    then . '/Users/jlindqvist/Downloads/google-cloud-sdk/path.zsh.inc';
-fi
-
-# enable shell command completion for gcloud.
-if [ -f '/Users/jlindqvist/Downloads/google-cloud-sdk/completion.zsh.inc' ];
-    then . '/Users/jlindqvist/Downloads/google-cloud-sdk/completion.zsh.inc';
-fi
