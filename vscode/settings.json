@@ -45,7 +45,7 @@
     "terminal.integrated.macOptionIsMeta": true,
     "update.showReleaseNotes": false,
     "window.restoreWindows": "all",
-    "window.zoomLevel": -2,
+    "window.zoomLevel": -1,
     "zenMode.hideLineNumbers": false,
     // plugins
     "git.enabled": true,
@@ -63,6 +63,14 @@
     "go.useLanguageServer": true,
     "go.vetOnSave": "package",
     "hadolint.hadolintPath": "%USERHOME%\\scoop\\shims\\hadolint.exe",
+    "python.languageServer": "Jedi",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pydocstyleEnabled": true,
     "shellformat.path": "%USERHOME%\\scoop\\shims\\shellcheck.exe",
     "terraform.languageServer": {
         "enabled": true,
@@ -81,17 +89,17 @@
         "editor.defaultFormatter": "exiasr.hadolint"
     },
     "[go]": {
-        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
         },
+        "editor.formatOnSave": true,
         "editor.snippetSuggestions": "none",
     },
     "[go.mod]": {
-        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
         },
+        "editor.formatOnSave": true
     },
     "[markdown]": {
         "files.trimTrailingWhitespace": false
